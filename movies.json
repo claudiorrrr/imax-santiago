@@ -1,25 +1,9 @@
 {
-  "last_updated": "2025-02-11T01:06:43.040313",
+  "last_updated": "2025-02-11T17:22:44.255060",
   "movies": [
     {
       "title": "NOSFERATU",
       "showtimes": [
-        {
-          "time": "12:10",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140948&countryCode=CL"
-        },
-        {
-          "time": "15:10",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140949&countryCode=CL"
-        },
-        {
-          "time": "18:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140950&countryCode=CL"
-        },
-        {
-          "time": "20:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140951&countryCode=CL"
-        },
         {
           "time": "22:30",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140979&countryCode=CL"
@@ -29,22 +13,6 @@
     {
       "title": "INTERSTELLAR: 10 ANIVERSARIO",
       "showtimes": [
-        {
-          "time": "11:10",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140971&countryCode=CL"
-        },
-        {
-          "time": "20:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140964&countryCode=CL"
-        },
-        {
-          "time": "11:40",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140976&countryCode=CL"
-        },
-        {
-          "time": "15:20",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140977&countryCode=CL"
-        },
         {
           "time": "19:00",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140978&countryCode=CL"

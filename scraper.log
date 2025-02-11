@@ -1,0 +1,81 @@
+2025-02-11 17:21:04,545 - INFO - Starting Chrome WebDriver...
+2025-02-11 17:21:04,545 - INFO - ====== WebDriver manager ======
+2025-02-11 17:21:11,112 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-11 17:21:11,312 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-11 17:21:11,421 - INFO - There is no [mac64] chromedriver "132.0.6834.159" for browser google-chrome "132.0.6834" in cache
+2025-02-11 17:21:11,449 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-11 17:21:12,091 - INFO - WebDriver version 132.0.6834.159 selected
+2025-02-11 17:21:12,095 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/132.0.6834.159/mac-arm64/chromedriver-mac-arm64.zip
+2025-02-11 17:21:12,095 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/132.0.6834.159/mac-arm64/chromedriver-mac-arm64.zip
+2025-02-11 17:21:12,387 - INFO - Driver downloading response is 200
+2025-02-11 17:21:14,663 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-11 17:21:14,835 - INFO - Driver has been saved in cache [/Users/claudio/.wdm/drivers/chromedriver/mac64/132.0.6834.159]
+2025-02-11 17:21:17,661 - INFO - Accessing URL: https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana
+2025-02-11 17:21:47,778 - WARNING - Attempt 1 failed. Retrying...
+2025-02-11 17:21:47,779 - ERROR - An error occurred: cannot access local variable 'time' where it is not associated with a value
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 54, in list_cinepolis_imax_movies
+    driver.get(url)
+    ~~~~~~~~~~^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/selenium/webdriver/remote/webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/selenium/webdriver/remote/webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.13/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.017
+  (Session info: chrome=132.0.6834.162)
+Stacktrace:
+0   chromedriver                        0x00000001005db0d4 cxxbridge1$str$ptr + 2600792
+1   chromedriver                        0x00000001005d39f0 cxxbridge1$str$ptr + 2570356
+2   chromedriver                        0x00000001001743d8 cxxbridge1$string$len + 89376
+3   chromedriver                        0x000000010015f6c0 cxxbridge1$string$len + 4104
+4   chromedriver                        0x000000010015f460 cxxbridge1$string$len + 3496
+5   chromedriver                        0x000000010015d168 chromedriver + 184680
+6   chromedriver                        0x000000010015ddd4 chromedriver + 187860
+7   chromedriver                        0x000000010016ba70 cxxbridge1$string$len + 54200
+8   chromedriver                        0x000000010017f8d0 cxxbridge1$string$len + 135704
+9   chromedriver                        0x000000010015e400 chromedriver + 189440
+10  chromedriver                        0x000000010017f798 cxxbridge1$string$len + 135392
+11  chromedriver                        0x00000001001f357c cxxbridge1$string$len + 609988
+12  chromedriver                        0x00000001001ad34c cxxbridge1$string$len + 322708
+13  chromedriver                        0x00000001001adf94 cxxbridge1$string$len + 325852
+14  chromedriver                        0x00000001005a6238 cxxbridge1$str$ptr + 2384060
+15  chromedriver                        0x00000001005a9550 cxxbridge1$str$ptr + 2397140
+16  chromedriver                        0x000000010058cb9c cxxbridge1$str$ptr + 2279968
+17  chromedriver                        0x00000001005a9e10 cxxbridge1$str$ptr + 2399380
+18  chromedriver                        0x000000010057e6a4 cxxbridge1$str$ptr + 2221352
+19  chromedriver                        0x00000001005c47d8 cxxbridge1$str$ptr + 2508380
+20  chromedriver                        0x00000001005c4954 cxxbridge1$str$ptr + 2508760
+21  chromedriver                        0x00000001005d3664 cxxbridge1$str$ptr + 2569448
+22  libsystem_pthread.dylib             0x00000001988cf2e4 _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001988ca0fc thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 62, in list_cinepolis_imax_movies
+    time.sleep(5)
+    ^^^^
+UnboundLocalError: cannot access local variable 'time' where it is not associated with a value
+2025-02-11 17:21:47,875 - INFO - WebDriver closed successfully
+2025-02-11 17:21:47,876 - INFO - Successfully saved movies.json
+2025-02-11 17:22:44,254 - INFO - Starting Chrome WebDriver...
+2025-02-11 17:22:44,255 - INFO - ====== WebDriver manager ======
+2025-02-11 17:22:44,884 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-11 17:22:44,994 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-11 17:22:45,140 - INFO - Driver [/Users/claudio/.wdm/drivers/chromedriver/mac64/132.0.6834.159/chromedriver-mac-arm64/chromedriver] found in cache
+2025-02-11 17:22:46,545 - INFO - Accessing URL: https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana
+2025-02-11 17:23:16,669 - WARNING - Attempt 1 failed. Retrying...
+2025-02-11 17:23:51,760 - WARNING - Attempt 2 failed. Retrying...
+2025-02-11 17:24:09,009 - INFO - Waiting for movie elements to load...
+2025-02-11 17:24:09,041 - INFO - Found 77 movie articles
+2025-02-11 17:24:09,269 - INFO - Processing IMAX movie: NOSFERATU
+2025-02-11 17:24:09,285 - INFO - Found 1 showtimes for NOSFERATU
+2025-02-11 17:24:09,312 - INFO - Processing IMAX movie: INTERSTELLAR: 10 ANIVERSARIO
+2025-02-11 17:24:09,326 - INFO - Found 1 showtimes for INTERSTELLAR: 10 ANIVERSARIO
+2025-02-11 17:24:09,461 - INFO - WebDriver closed successfully
+2025-02-11 17:24:09,462 - INFO - Successfully saved movies.json

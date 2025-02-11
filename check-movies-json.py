@@ -1,3 +1,6 @@
+import logging
+import sys
+import time  # Make sure this is at the top
 import json
 from datetime import datetime
 from selenium import webdriver
@@ -8,6 +11,16 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('scraper.log'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
 def list_cinepolis_imax_movies():
     options = Options()
     options.add_argument('--headless')
@@ -15,26 +28,45 @@ def list_cinepolis_imax_movies():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-extensions')
+    options.add_argument('--disable-software-rasterizer')
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--window-size=1920,1080')
 
-    print("Checking Cinépolis Plaza Egaña IMAX movies...")
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
-    driver.set_page_load_timeout(10)
+    logging.info("Starting Chrome WebDriver...")
 
-    # Initialize the JSON structure
     movies_data = {
         "last_updated": datetime.now().isoformat(),
         "movies": []
     }
 
     try:
-        url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
-        driver.get(url)
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=options)
+        driver.set_page_load_timeout(30)  # Increased timeout
 
-        wait = WebDriverWait(driver, 5)
+        url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
+        logging.info(f"Accessing URL: {url}")
+
+        # Try loading the page multiple times
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                driver.get(url)
+                time.sleep(5)  # Wait for page to load
+                break
+            except Exception as e:
+                if attempt == max_retries - 1:
+                    logging.error(f"Failed to load page after {max_retries} attempts")
+                    raise
+                logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
+                time.sleep(5)
+
+        logging.info("Waiting for movie elements to load...")
+        wait = WebDriverWait(driver, 10)  # Increased wait time
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "article.row.tituloPelicula")))
 
         movie_articles = driver.find_elements(By.CSS_SELECTOR, "article.row.tituloPelicula")
+        logging.info(f"Found {len(movie_articles)} movie articles")
 
         print("\nIMAX Movies:")
         print("-" * 40)
@@ -45,7 +77,10 @@ def list_cinepolis_imax_movies():
                 imax_img = article.find_elements(By.CSS_SELECTOR, "img[src*='icon-imax']")
                 if imax_img:
                     title = article.find_element(By.CSS_SELECTOR, "a.datalayer-movie.ng-binding")
-                    showtime_elements = article.find_elements(By.CSS_SELECTOR, "time.btn.btnhorario a")
+                    logging.info(f"Processing IMAX movie: {title.text}")
+
+                    # Only get showtimes from div classes that contain 'IMAX'
+                    imax_showtime_container = article.find_elements(By.CSS_SELECTOR, "div[class*='horarioExp'][class*='IMAX']")
 
                     # Print the original format
                     print(f"- {title.text}")
@@ -56,44 +91,64 @@ def list_cinepolis_imax_movies():
                         "showtimes": []
                     }
 
-                    if showtime_elements:
-                        print("  Showtimes:")
-                        for time_element in showtime_elements:
-                            time = time_element.text
-                            buy_url = time_element.get_attribute('href')
-                            print(f"    {time} - Buy tickets: {buy_url}")
+                    if imax_showtime_container:
+                        print("  IMAX Showtimes:")
+                        for container in imax_showtime_container:
+                            showtime_elements = container.find_elements(By.CSS_SELECTOR, "time.btn.btnhorario a")
+                            logging.info(f"Found {len(showtime_elements)} showtimes for {title.text}")
 
-                            # Add showtime to JSON structure
-                            movie_entry["showtimes"].append({
-                                "time": time,
-                                "url": buy_url
-                            })
+                            for time_element in showtime_elements:
+                                showtime = time_element.text  # Changed variable name from 'time' to 'showtime'
+                                buy_url = time_element.get_attribute('href')
+                                print(f"    {showtime} - Buy tickets: {buy_url}")
+
+                                # Add showtime to JSON structure
+                                movie_entry["showtimes"].append({
+                                    "time": showtime,
+                                    "url": buy_url
+                                })
                     else:
-                        print("  No showtimes available")
+                        logging.info(f"No IMAX showtimes available for {title.text}")
+                        print("  No IMAX showtimes available")
                     print()  # Add blank line between movies
 
-                    # Add movie to JSON data
-                    movies_data["movies"].append(movie_entry)
-                    imax_count += 1
+                    # Only add movie to JSON if it has IMAX showtimes
+                    if movie_entry["showtimes"]:
+                        movies_data["movies"].append(movie_entry)
+                        imax_count += 1
             except Exception as e:
+                logging.error(f"Error processing movie article: {str(e)}", exc_info=True)
                 continue
 
         if imax_count == 0:
+            logging.warning("No IMAX movies found")
             print("No IMAX movies found")
 
     except Exception as e:
+        logging.error(f"An error occurred: {str(e)}", exc_info=True)
         print(f"An error occurred: {e}")
     finally:
-        driver.quit()
+        try:
+            driver.quit()
+            logging.info("WebDriver closed successfully")
+        except Exception as e:
+            logging.error("Error closing WebDriver", exc_info=True)
 
     # Save JSON to file
-    with open('movies.json', 'w', encoding='utf-8') as f:
-        json.dump(movies_data, f, ensure_ascii=False, indent=2)
+    try:
+        with open('movies.json', 'w', encoding='utf-8') as f:
+            json.dump(movies_data, f, ensure_ascii=False, indent=2)
+        logging.info("Successfully saved movies.json")
+    except Exception as e:
+        logging.error(f"Error saving JSON file: {str(e)}", exc_info=True)
 
     # Print JSON output
     print("\nJSON Output:")
     print(json.dumps(movies_data, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
-    list_cinepolis_imax_movies()
-
+    try:
+        list_cinepolis_imax_movies()
+    except Exception as e:
+        logging.error("Fatal error in main program", exc_info=True)
+        sys.exit(1)
