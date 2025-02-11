@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAX Movies Santiago</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IMAX Movies at Cinépolis Plaza Egaña</h1>
+        <div id="last-update"></div>
+        <div id="movies"></div>
+    </div>
+    <script>
+        fetch('movies.json')
+            .then(response => response.json())
+            .then(data => {
+                // Update last updated time
+                const lastUpdate = new Date(data.last_updated);
+                document.getElementById('last-update').textContent = 
+                    `Last updated: ${lastUpdate.toLocaleString()}`;
+
+                // Display movies
+                const moviesDiv = document.getElementById('movies');
+                data.movies.forEach(movie => {
+                    const movieElement = document.createElement('div');
+                    movieElement.className = 'movie';
+
+                    let showtimesHtml = '';
+                    if (movie.showtimes.length > 0) {
+                        showtimesHtml = `
+                            <div class="showtimes">
+                                <h3>Showtimes:</h3>
+                                ${movie.showtimes.map(show => 
+                                    `<a href="${show.url}" target="_blank" class="showtime-btn">
+                                        ${show.time}
+                                    </a>`
+                                ).join('')}
+                            </div>
+                        `;
+                    }
+
+                    movieElement.innerHTML = `
+                        <h2>${movie.title}</h2>
+                        ${showtimesHtml}
+                    `;
+                    moviesDiv.appendChild(movieElement);
+                });
+            });
+    </script>
+</body>
+</html>
+

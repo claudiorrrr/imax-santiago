@@ -1,0 +1,14 @@
+{
+  "last_updated": "2025-02-11T00:53:48.446907",
+  "movies": [
+    {
+      "title": "NOSFERATU",
+      "showtimes": [
+        {
+          "time": "22:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140938&countryCode=CL"
+        }
+      ]
+    }
+  ]
+}
