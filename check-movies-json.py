@@ -3,13 +3,10 @@ import sys
 import time
 import json
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -28,25 +25,16 @@ def list_cinepolis_imax_movies():
     }
 
     try:
-        options = Options()
+        options = uc.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        options.add_argument('--disable-gpu')
-        options.add_argument('--window-size=1920,1080')
-        # Add these new options to improve stability
-        options.add_argument('--disable-features=NetworkService')
-        options.add_argument('--disable-features=VizDisplayCompositor')
-        options.add_argument('--disable-web-security')
-        options.add_argument('--disable-features=IsolateOrigins,site-per-process')
-        options.page_load_strategy = 'eager'
 
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
-
-        # Set various timeouts
-        driver.set_page_load_timeout(30)
-        driver.implicitly_wait(20)
+        driver = uc.Chrome(
+            options=options,
+            driver_executable_path="/usr/bin/chromedriver",
+            browser_executable_path="/usr/bin/google-chrome"
+        )
 
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
         logging.info(f"Accessing URL: {url}")
@@ -54,7 +42,7 @@ def list_cinepolis_imax_movies():
         try:
             driver.get(url)
             # Wait for initial page load
-            time.sleep(5)
+            time.sleep(10)
 
             # Wait for specific element that indicates page is loaded
             wait = WebDriverWait(driver, 20)
@@ -62,7 +50,7 @@ def list_cinepolis_imax_movies():
 
             # Execute JavaScript to scroll down the page
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(2)
+            time.sleep(5)
 
             movie_articles = driver.find_elements(By.CSS_SELECTOR, "article.row.tituloPelicula")
             logging.info(f"Found {len(movie_articles)} movie articles")
