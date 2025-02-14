@@ -21,7 +21,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y chromium-browser chromium-chromedriver
-        chrome --version
+        chromium-browser --version
         chromedriver --version
 
     - name: Install Python dependencies
