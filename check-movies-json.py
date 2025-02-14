@@ -3,7 +3,13 @@ import sys
 import time
 import json
 from datetime import datetime
-from seleniumbase import Driver
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Configure logging
 logging.basicConfig(
@@ -15,6 +21,34 @@ logging.basicConfig(
     ]
 )
 
+def wait_for_angular(driver):
+    script = """
+    var callback = arguments[arguments.length - 1];
+    if (window.angular) {
+        var el = document.querySelector('body');
+        var injector = window.angular.element(el).injector();
+        var $http = injector.get('$http');
+        var $rootScope = injector.get('$rootScope');
+        var $timeout = injector.get('$timeout');
+
+        var fn = function() {
+            if (!$http.pendingRequests.length) {
+                callback(true);
+            } else {
+                $timeout(fn, 100);
+            }
+        };
+        $timeout(fn, 0);
+    } else {
+        callback(false);
+    }
+    """
+    try:
+        driver.execute_async_script(script)
+    except:
+        pass
+    time.sleep(5)  # Fallback wait
+
 def list_cinepolis_imax_movies():
     logging.info("Starting Chrome WebDriver...")
     movies_data = {
@@ -23,14 +57,33 @@ def list_cinepolis_imax_movies():
     }
 
     try:
-        driver = Driver(uc=True, headless=True)  # Use SeleniumBase's UC Mode
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--window-size=1920,1080')
+
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=options)
+        driver.set_page_load_timeout(60)
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
         logging.info(f"Accessing URL: {url}")
 
         driver.get(url)
-        driver.sleep(5)  # Built-in sleep method
 
-        movie_articles = driver.find_elements("css selector", "article.row.tituloPelicula")
+        # Wait for Angular to load and process data
+        wait_for_angular(driver)
+
+        # Wait specifically for IMAX content
+        wait = WebDriverWait(driver, 20)
+        try:
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div[class*='horarioExp'][class*='IMAX']")))
+        except:
+            logging.info("Waiting longer for IMAX content...")
+            time.sleep(10)  # Additional wait if needed
+
+        movie_articles = driver.find_elements(By.CSS_SELECTOR, "article.row.tituloPelicula")
         logging.info(f"Found {len(movie_articles)} movie articles")
 
         print("\nIMAX Movies:")
@@ -39,12 +92,11 @@ def list_cinepolis_imax_movies():
 
         for article in movie_articles:
             try:
-                imax_img = article.find_elements("css selector", "img[src*='icon-imax']")
-                if imax_img:
-                    title = article.find_element("css selector", "a.datalayer-movie.ng-binding")
+                # Look for IMAX format div instead of just the image
+                imax_format = article.find_elements(By.CSS_SELECTOR, "div[class*='horarioExp'][class*='IMAX']")
+                if imax_format:
+                    title = article.find_element(By.CSS_SELECTOR, "a.datalayer-movie.ng-binding")
                     logging.info(f"Processing IMAX movie: {title.text}")
-
-                    imax_showtime_container = article.find_elements("css selector", "div[class*='horarioExp'][class*='IMAX']")
 
                     print(f"- {title.text}")
 
@@ -53,24 +105,20 @@ def list_cinepolis_imax_movies():
                         "showtimes": []
                     }
 
-                    if imax_showtime_container:
+                    for format_div in imax_format:
                         print(" IMAX Showtimes:")
-                        for container in imax_showtime_container:
-                            showtime_elements = container.find_elements("css selector", "time.btn.btnhorario a")
-                            logging.info(f"Found {len(showtime_elements)} showtimes for {title.text}")
+                        showtime_elements = format_div.find_elements(By.CSS_SELECTOR, "time.btn.btnhorario a")
+                        logging.info(f"Found {len(showtime_elements)} showtimes for {title.text}")
 
-                            for time_element in showtime_elements:
-                                showtime = time_element.text
-                                buy_url = time_element.get_attribute('href')
-                                print(f" {showtime} - Buy tickets: {buy_url}")
+                        for time_element in showtime_elements:
+                            showtime = time_element.text
+                            buy_url = time_element.get_attribute('href')
+                            print(f" {showtime} - Buy tickets: {buy_url}")
 
-                                movie_entry["showtimes"].append({
-                                    "time": showtime,
-                                    "url": buy_url
-                                })
-                    else:
-                        logging.info(f"No IMAX showtimes available for {title.text}")
-                        print(" No IMAX showtimes available")
+                            movie_entry["showtimes"].append({
+                                "time": showtime,
+                                "url": buy_url
+                            })
 
                     print()
 
