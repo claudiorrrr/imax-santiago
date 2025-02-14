@@ -3,7 +3,8 @@ import sys
 import time
 import json
 from datetime import datetime
-import undetected_chromedriver as uc
+from seleniumwire import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -26,34 +27,40 @@ def list_cinepolis_imax_movies():
     }
 
     try:
-        options = uc.ChromeOptions()
+        options = Options()
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--disable-gpu')
         options.add_argument('--window-size=1920,1080')
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36')
 
-        driver = uc.Chrome(options=options)
-        driver.set_page_load_timeout(60)  # Increased timeout
+        seleniumwire_options = {
+            'verify_ssl': False,
+            'disable_encoding': True
+        }
+
+        driver = webdriver.Chrome(options=options, seleniumwire_options=seleniumwire_options)
+        driver.set_page_load_timeout(60)
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
         logging.info(f"Accessing URL: {url}")
 
-        # Try loading the page multiple times
         max_retries = 3
         for attempt in range(max_retries):
             try:
                 driver.get(url)
-                time.sleep(15)  # Increased wait time for page to load
+                time.sleep(15)
                 break
             except Exception as e:
                 if attempt == max_retries - 1:
                     logging.error(f"Failed to load page after {max_retries} attempts")
                     raise
                 logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
-                time.sleep(15)  # Increased wait time between retries
+                time.sleep(15)
 
         logging.info("Waiting for movie elements to load...")
-        wait = WebDriverWait(driver, 30)  # Increased wait time
+        wait = WebDriverWait(driver, 30)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "article.row.tituloPelicula")))
 
         movie_articles = driver.find_elements(By.CSS_SELECTOR, "article.row.tituloPelicula")
@@ -70,7 +77,6 @@ def list_cinepolis_imax_movies():
                     title = article.find_element(By.CSS_SELECTOR, "a.datalayer-movie.ng-binding")
                     logging.info(f"Processing IMAX movie: {title.text}")
 
-                    # Only get showtimes from div classes that contain 'IMAX'
                     imax_showtime_container = article.find_elements(By.CSS_SELECTOR, "div[class*='horarioExp'][class*='IMAX']")
 
                     print(f"- {title.text}")
