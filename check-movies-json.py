@@ -3,10 +3,13 @@ import sys
 import time
 import json
 from datetime import datetime
-import undetected_chromedriver as uc
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -25,16 +28,13 @@ def list_cinepolis_imax_movies():
     }
 
     try:
-        options = uc.ChromeOptions()
-        options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
 
-        driver = uc.Chrome(
-            options=options,
-            driver_executable_path="/usr/bin/chromedriver",
-            browser_executable_path="/usr/bin/google-chrome"
-        )
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=chrome_options)
 
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
         logging.info(f"Accessing URL: {url}")

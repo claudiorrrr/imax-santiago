@@ -1,21 +1,24 @@
 {
-  "last_updated": "2025-02-11T17:22:44.255060",
+  "last_updated": "2025-02-15T15:19:39.000118",
   "movies": [
     {
-      "title": "NOSFERATU",
+      "title": "CAPITAN AMERICA: UN NUEVO MUNDO",
       "showtimes": [
         {
-          "time": "22:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140979&countryCode=CL"
-        }
-      ]
-    },
-    {
-      "title": "INTERSTELLAR: 10 ANIVERSARIO",
-      "showtimes": [
+          "time": "13:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140633&countryCode=CL"
+        },
+        {
+          "time": "21:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140636&countryCode=CL"
+        },
+        {
+          "time": "16:20",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140634&countryCode=CL"
+        },
         {
           "time": "19:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140978&countryCode=CL"
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140635&countryCode=CL"
         }
       ]
     }

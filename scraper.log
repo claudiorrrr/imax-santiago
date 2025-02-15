@@ -79,3 +79,22 @@ UnboundLocalError: cannot access local variable 'time' where it is not associate
 2025-02-11 17:24:09,326 - INFO - Found 1 showtimes for INTERSTELLAR: 10 ANIVERSARIO
 2025-02-11 17:24:09,461 - INFO - WebDriver closed successfully
 2025-02-11 17:24:09,462 - INFO - Successfully saved movies.json
+2025-02-15 15:19:38,999 - INFO - Starting Chrome WebDriver...
+2025-02-15 15:19:39,000 - INFO - ====== WebDriver manager ======
+2025-02-15 15:19:44,543 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-15 15:19:44,691 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-15 15:19:44,789 - INFO - There is no [mac64] chromedriver "133.0.6943.98" for browser google-chrome "133.0.6943" in cache
+2025-02-15 15:19:44,796 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-15 15:19:45,301 - INFO - WebDriver version 133.0.6943.98 selected
+2025-02-15 15:19:45,304 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.98/mac-arm64/chromedriver-mac-arm64.zip
+2025-02-15 15:19:45,304 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.98/mac-arm64/chromedriver-mac-arm64.zip
+2025-02-15 15:19:45,650 - INFO - Driver downloading response is 200
+2025-02-15 15:19:47,489 - INFO - Get LATEST chromedriver version for google-chrome
+2025-02-15 15:19:47,648 - INFO - Driver has been saved in cache [/Users/claudio/.wdm/drivers/chromedriver/mac64/133.0.6943.98]
+2025-02-15 15:19:49,557 - INFO - Accessing URL: https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana
+2025-02-15 15:20:10,683 - INFO - Found 80 movie articles
+2025-02-15 15:20:10,886 - INFO - Processing IMAX movie: CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-15 15:20:10,890 - INFO - Found 2 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-15 15:20:10,901 - INFO - Found 2 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-15 15:20:11,042 - INFO - WebDriver closed successfully
+2025-02-15 15:20:11,043 - INFO - Successfully saved movies.json
