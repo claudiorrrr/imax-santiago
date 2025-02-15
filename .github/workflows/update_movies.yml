@@ -2,17 +2,13 @@ name: Check IMAX Movies
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
-  workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    - cron: '0 */3 * * *'  # Runs every 3 hours
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   check-movies:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15  # Add timeout to prevent hung jobs
 
     steps:
     - uses: actions/checkout@v4
@@ -23,12 +19,6 @@ jobs:
         python-version: '3.11'
         cache: 'pip'
 
-    - name: Cache Chrome installation
-      uses: actions/cache@v3
-      with:
-        path: ./google-chrome-stable_current_amd64.deb
-        key: chrome-stable-${{ runner.os }}
-
     - name: Install Chrome
       run: |
         sudo apt-get update
@@ -36,15 +26,15 @@ jobs:
         wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install undetected-chromedriver selenium
 
     - name: Run movie checker
       run: |
-        google-chrome --version
-        python3 check-movies-json.py
+        google-chrome --version  # Print Chrome version for debugging
+        python check-movies-json.py
 
     - name: Commit and push if changes
       run: |
@@ -55,5 +45,5 @@ jobs:
           echo "No changes to commit"
         else
           git commit -m "Update movies.json [skip ci]"
-          git push || (git pull --rebase && git push)
+          git push
         fi
