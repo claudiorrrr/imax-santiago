@@ -5,9 +5,14 @@ on:
     - cron: '0 */3 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check-movies:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
     - uses: actions/checkout@v4
@@ -16,6 +21,13 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+        cache: 'pip'
+
+    - name: Cache Chrome installation
+      uses: actions/cache@v3
+      with:
+        path: ./google-chrome-stable_current_amd64.deb
+        key: chrome-stable-${{ runner.os }}
 
     - name: Install Chrome
       run: |
@@ -31,7 +43,6 @@ jobs:
 
     - name: Run movie checker
       run: |
-        # Print Chrome version
         google-chrome --version
         python3 check-movies-json.py
 
@@ -40,4 +51,9 @@ jobs:
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
         git add movies.json scraper.log
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update movies.json [skip ci]" && git push)
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update movies.json [skip ci]"
+          git push || (git pull --rebase && git push)
+        fi
