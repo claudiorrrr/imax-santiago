@@ -2,8 +2,8 @@ name: Check IMAX Movies
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # Runs every 3 hours
-  workflow_dispatch:  # Allows manual triggering
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
 
 jobs:
   check-movies:
@@ -15,12 +15,14 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'  # Using Python 3.11 for better compatibility
+        python-version: '3.11'
 
     - name: Install Chrome
       run: |
         sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
+        sudo apt-get install -y wget unzip
+        wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 
     - name: Install dependencies
       run: |
@@ -28,11 +30,14 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run movie checker
-      run: python3 check-movies-json.py
+      run: |
+        # Print Chrome version
+        google-chrome --version
+        python3 check-movies-json.py
 
     - name: Commit and push if changes
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
-        git add movies.json
+        git add movies.json scraper.log
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update movies.json [skip ci]" && git push)

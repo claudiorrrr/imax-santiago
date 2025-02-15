@@ -3,13 +3,10 @@ import sys
 import time
 import json
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
+import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 
 logging.basicConfig(
     level=logging.INFO,
@@ -28,24 +25,27 @@ def list_cinepolis_imax_movies():
     }
 
     try:
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
+        options = uc.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--window-size=1920,1080')
+        options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
 
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver = uc.Chrome(options=options)
+        driver.set_page_load_timeout(30)
 
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
         logging.info(f"Accessing URL: {url}")
 
         try:
             driver.get(url)
-            # Wait for initial page load
-            time.sleep(10)
+            # Increased initial wait time
+            time.sleep(15)
 
-            # Wait for specific element that indicates page is loaded
-            wait = WebDriverWait(driver, 20)
+            # Wait for specific element with increased timeout
+            wait = WebDriverWait(driver, 30)
             wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "article.row.tituloPelicula")))
 
             # Execute JavaScript to scroll down the page

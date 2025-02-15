@@ -98,3 +98,249 @@ UnboundLocalError: cannot access local variable 'time' where it is not associate
 2025-02-15 15:20:10,901 - INFO - Found 2 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
 2025-02-15 15:20:11,042 - INFO - WebDriver closed successfully
 2025-02-15 15:20:11,043 - INFO - Successfully saved movies.json
+2025-02-15 15:43:15,390 - INFO - Starting Chrome WebDriver...
+2025-02-15 15:43:21,493 - INFO - patching driver executable /Users/claudio/Library/Application Support/undetected_chromedriver/undetected_chromedriver
+2025-02-15 15:43:25,029 - ERROR - An error occurred: Message: unknown error: cannot connect to chrome at 127.0.0.1:54318
+from session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 133.0.6943.55
+Stacktrace:
+0   undetected_chromedriver             0x00000001048b06b8 undetected_chromedriver + 4937400
+1   undetected_chromedriver             0x00000001048a7b73 undetected_chromedriver + 4901747
+2   undetected_chromedriver             0x0000000104465616 undetected_chromedriver + 435734
+3   undetected_chromedriver             0x0000000104497d10 undetected_chromedriver + 642320
+4   undetected_chromedriver             0x000000010448ef98 undetected_chromedriver + 606104
+5   undetected_chromedriver             0x00000001044d6a08 undetected_chromedriver + 899592
+6   undetected_chromedriver             0x00000001044d5ebf undetected_chromedriver + 896703
+7   undetected_chromedriver             0x00000001044ccde3 undetected_chromedriver + 859619
+8   undetected_chromedriver             0x000000010449ad7f undetected_chromedriver + 654719
+9   undetected_chromedriver             0x000000010449c0de undetected_chromedriver + 659678
+10  undetected_chromedriver             0x000000010486c2ad undetected_chromedriver + 4657837
+11  undetected_chromedriver             0x0000000104871130 undetected_chromedriver + 4677936
+12  undetected_chromedriver             0x0000000104877def undetected_chromedriver + 4705775
+13  undetected_chromedriver             0x000000010487205a undetected_chromedriver + 4681818
+14  undetected_chromedriver             0x000000010484492c undetected_chromedriver + 4495660
+15  undetected_chromedriver             0x000000010488f838 undetected_chromedriver + 4802616
+16  undetected_chromedriver             0x000000010488f9b7 undetected_chromedriver + 4802999
+17  undetected_chromedriver             0x00000001048a099f undetected_chromedriver + 4872607
+18  libsystem_pthread.dylib             0x00007ff80db2f253 _pthread_start + 99
+19  libsystem_pthread.dylib             0x00007ff80db2abef thread_start + 15
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 36, in list_cinepolis_imax_movies
+    driver = uc.Chrome(options=options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/undetected_chromedriver/__init__.py", line 443, in __init__
+    super(Chrome, self).__init__(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py", line 45, in __init__
+    super().__init__(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in __init__
+    self.start_session(capabilities)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/undetected_chromedriver/__init__.py", line 674, in start_session
+    super(selenium.webdriver.chrome.webdriver.WebDriver, self).start_session(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 342, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot connect to chrome at 127.0.0.1:54318
+from session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 133.0.6943.55
+Stacktrace:
+0   undetected_chromedriver             0x00000001048b06b8 undetected_chromedriver + 4937400
+1   undetected_chromedriver             0x00000001048a7b73 undetected_chromedriver + 4901747
+2   undetected_chromedriver             0x0000000104465616 undetected_chromedriver + 435734
+3   undetected_chromedriver             0x0000000104497d10 undetected_chromedriver + 642320
+4   undetected_chromedriver             0x000000010448ef98 undetected_chromedriver + 606104
+5   undetected_chromedriver             0x00000001044d6a08 undetected_chromedriver + 899592
+6   undetected_chromedriver             0x00000001044d5ebf undetected_chromedriver + 896703
+7   undetected_chromedriver             0x00000001044ccde3 undetected_chromedriver + 859619
+8   undetected_chromedriver             0x000000010449ad7f undetected_chromedriver + 654719
+9   undetected_chromedriver             0x000000010449c0de undetected_chromedriver + 659678
+10  undetected_chromedriver             0x000000010486c2ad undetected_chromedriver + 4657837
+11  undetected_chromedriver             0x0000000104871130 undetected_chromedriver + 4677936
+12  undetected_chromedriver             0x0000000104877def undetected_chromedriver + 4705775
+13  undetected_chromedriver             0x000000010487205a undetected_chromedriver + 4681818
+14  undetected_chromedriver             0x000000010484492c undetected_chromedriver + 4495660
+15  undetected_chromedriver             0x000000010488f838 undetected_chromedriver + 4802616
+16  undetected_chromedriver             0x000000010488f9b7 undetected_chromedriver + 4802999
+17  undetected_chromedriver             0x00000001048a099f undetected_chromedriver + 4872607
+18  libsystem_pthread.dylib             0x00007ff80db2f253 _pthread_start + 99
+19  libsystem_pthread.dylib             0x00007ff80db2abef thread_start + 15
+
+2025-02-15 15:43:25,034 - ERROR - Error closing WebDriver
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 113, in list_cinepolis_imax_movies
+    driver.quit()
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'driver' where it is not associated with a value
+2025-02-15 15:43:25,034 - INFO - Successfully saved movies.json
+2025-02-15 15:43:46,141 - INFO - Starting Chrome WebDriver...
+2025-02-15 15:43:49,175 - INFO - patching driver executable /Users/claudio/Library/Application Support/undetected_chromedriver/undetected_chromedriver
+2025-02-15 15:43:52,166 - ERROR - An error occurred: Message: unknown error: cannot connect to chrome at 127.0.0.1:54508
+from session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 133.0.6943.55
+Stacktrace:
+0   undetected_chromedriver             0x000000010542c6b8 undetected_chromedriver + 4937400
+1   undetected_chromedriver             0x0000000105423b73 undetected_chromedriver + 4901747
+2   undetected_chromedriver             0x0000000104fe1616 undetected_chromedriver + 435734
+3   undetected_chromedriver             0x0000000105013d10 undetected_chromedriver + 642320
+4   undetected_chromedriver             0x000000010500af98 undetected_chromedriver + 606104
+5   undetected_chromedriver             0x0000000105052a08 undetected_chromedriver + 899592
+6   undetected_chromedriver             0x0000000105051ebf undetected_chromedriver + 896703
+7   undetected_chromedriver             0x0000000105048de3 undetected_chromedriver + 859619
+8   undetected_chromedriver             0x0000000105016d7f undetected_chromedriver + 654719
+9   undetected_chromedriver             0x00000001050180de undetected_chromedriver + 659678
+10  undetected_chromedriver             0x00000001053e82ad undetected_chromedriver + 4657837
+11  undetected_chromedriver             0x00000001053ed130 undetected_chromedriver + 4677936
+12  undetected_chromedriver             0x00000001053f3def undetected_chromedriver + 4705775
+13  undetected_chromedriver             0x00000001053ee05a undetected_chromedriver + 4681818
+14  undetected_chromedriver             0x00000001053c092c undetected_chromedriver + 4495660
+15  undetected_chromedriver             0x000000010540b838 undetected_chromedriver + 4802616
+16  undetected_chromedriver             0x000000010540b9b7 undetected_chromedriver + 4802999
+17  undetected_chromedriver             0x000000010541c99f undetected_chromedriver + 4872607
+18  libsystem_pthread.dylib             0x00007ff80db2f253 _pthread_start + 99
+19  libsystem_pthread.dylib             0x00007ff80db2abef thread_start + 15
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 36, in list_cinepolis_imax_movies
+    driver = uc.Chrome(options=options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/undetected_chromedriver/__init__.py", line 443, in __init__
+    super(Chrome, self).__init__(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py", line 45, in __init__
+    super().__init__(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in __init__
+    self.start_session(capabilities)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/undetected_chromedriver/__init__.py", line 674, in start_session
+    super(selenium.webdriver.chrome.webdriver.WebDriver, self).start_session(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 342, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot connect to chrome at 127.0.0.1:54508
+from session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 133.0.6943.55
+Stacktrace:
+0   undetected_chromedriver             0x000000010542c6b8 undetected_chromedriver + 4937400
+1   undetected_chromedriver             0x0000000105423b73 undetected_chromedriver + 4901747
+2   undetected_chromedriver             0x0000000104fe1616 undetected_chromedriver + 435734
+3   undetected_chromedriver             0x0000000105013d10 undetected_chromedriver + 642320
+4   undetected_chromedriver             0x000000010500af98 undetected_chromedriver + 606104
+5   undetected_chromedriver             0x0000000105052a08 undetected_chromedriver + 899592
+6   undetected_chromedriver             0x0000000105051ebf undetected_chromedriver + 896703
+7   undetected_chromedriver             0x0000000105048de3 undetected_chromedriver + 859619
+8   undetected_chromedriver             0x0000000105016d7f undetected_chromedriver + 654719
+9   undetected_chromedriver             0x00000001050180de undetected_chromedriver + 659678
+10  undetected_chromedriver             0x00000001053e82ad undetected_chromedriver + 4657837
+11  undetected_chromedriver             0x00000001053ed130 undetected_chromedriver + 4677936
+12  undetected_chromedriver             0x00000001053f3def undetected_chromedriver + 4705775
+13  undetected_chromedriver             0x00000001053ee05a undetected_chromedriver + 4681818
+14  undetected_chromedriver             0x00000001053c092c undetected_chromedriver + 4495660
+15  undetected_chromedriver             0x000000010540b838 undetected_chromedriver + 4802616
+16  undetected_chromedriver             0x000000010540b9b7 undetected_chromedriver + 4802999
+17  undetected_chromedriver             0x000000010541c99f undetected_chromedriver + 4872607
+18  libsystem_pthread.dylib             0x00007ff80db2f253 _pthread_start + 99
+19  libsystem_pthread.dylib             0x00007ff80db2abef thread_start + 15
+
+2025-02-15 15:43:52,171 - ERROR - Error closing WebDriver
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 113, in list_cinepolis_imax_movies
+    driver.quit()
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'driver' where it is not associated with a value
+2025-02-15 15:43:52,172 - INFO - Successfully saved movies.json
+2025-02-15 15:44:53,626 - INFO - Starting Chrome WebDriver...
+2025-02-15 15:44:56,192 - INFO - patching driver executable /Users/claudio/Library/Application Support/undetected_chromedriver/undetected_chromedriver
+2025-02-15 15:44:59,191 - ERROR - An error occurred: Message: unknown error: cannot connect to chrome at 127.0.0.1:54701
+from session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 133.0.6943.55
+Stacktrace:
+0   undetected_chromedriver             0x00000001045706b8 undetected_chromedriver + 4937400
+1   undetected_chromedriver             0x0000000104567b73 undetected_chromedriver + 4901747
+2   undetected_chromedriver             0x0000000104125616 undetected_chromedriver + 435734
+3   undetected_chromedriver             0x0000000104157d10 undetected_chromedriver + 642320
+4   undetected_chromedriver             0x000000010414ef98 undetected_chromedriver + 606104
+5   undetected_chromedriver             0x0000000104196a08 undetected_chromedriver + 899592
+6   undetected_chromedriver             0x0000000104195ebf undetected_chromedriver + 896703
+7   undetected_chromedriver             0x000000010418cde3 undetected_chromedriver + 859619
+8   undetected_chromedriver             0x000000010415ad7f undetected_chromedriver + 654719
+9   undetected_chromedriver             0x000000010415c0de undetected_chromedriver + 659678
+10  undetected_chromedriver             0x000000010452c2ad undetected_chromedriver + 4657837
+11  undetected_chromedriver             0x0000000104531130 undetected_chromedriver + 4677936
+12  undetected_chromedriver             0x0000000104537def undetected_chromedriver + 4705775
+13  undetected_chromedriver             0x000000010453205a undetected_chromedriver + 4681818
+14  undetected_chromedriver             0x000000010450492c undetected_chromedriver + 4495660
+15  undetected_chromedriver             0x000000010454f838 undetected_chromedriver + 4802616
+16  undetected_chromedriver             0x000000010454f9b7 undetected_chromedriver + 4802999
+17  undetected_chromedriver             0x000000010456099f undetected_chromedriver + 4872607
+18  libsystem_pthread.dylib             0x00007ff80db2f253 _pthread_start + 99
+19  libsystem_pthread.dylib             0x00007ff80db2abef thread_start + 15
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 36, in list_cinepolis_imax_movies
+    driver = uc.Chrome(options=options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/undetected_chromedriver/__init__.py", line 443, in __init__
+    super(Chrome, self).__init__(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/chrome/webdriver.py", line 45, in __init__
+    super().__init__(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in __init__
+    self.start_session(capabilities)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/undetected_chromedriver/__init__.py", line 674, in start_session
+    super(selenium.webdriver.chrome.webdriver.WebDriver, self).start_session(
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 342, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "/Users/claudio/dev/imax-santiago/venv/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: cannot connect to chrome at 127.0.0.1:54701
+from session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 133.0.6943.55
+Stacktrace:
+0   undetected_chromedriver             0x00000001045706b8 undetected_chromedriver + 4937400
+1   undetected_chromedriver             0x0000000104567b73 undetected_chromedriver + 4901747
+2   undetected_chromedriver             0x0000000104125616 undetected_chromedriver + 435734
+3   undetected_chromedriver             0x0000000104157d10 undetected_chromedriver + 642320
+4   undetected_chromedriver             0x000000010414ef98 undetected_chromedriver + 606104
+5   undetected_chromedriver             0x0000000104196a08 undetected_chromedriver + 899592
+6   undetected_chromedriver             0x0000000104195ebf undetected_chromedriver + 896703
+7   undetected_chromedriver             0x000000010418cde3 undetected_chromedriver + 859619
+8   undetected_chromedriver             0x000000010415ad7f undetected_chromedriver + 654719
+9   undetected_chromedriver             0x000000010415c0de undetected_chromedriver + 659678
+10  undetected_chromedriver             0x000000010452c2ad undetected_chromedriver + 4657837
+11  undetected_chromedriver             0x0000000104531130 undetected_chromedriver + 4677936
+12  undetected_chromedriver             0x0000000104537def undetected_chromedriver + 4705775
+13  undetected_chromedriver             0x000000010453205a undetected_chromedriver + 4681818
+14  undetected_chromedriver             0x000000010450492c undetected_chromedriver + 4495660
+15  undetected_chromedriver             0x000000010454f838 undetected_chromedriver + 4802616
+16  undetected_chromedriver             0x000000010454f9b7 undetected_chromedriver + 4802999
+17  undetected_chromedriver             0x000000010456099f undetected_chromedriver + 4872607
+18  libsystem_pthread.dylib             0x00007ff80db2f253 _pthread_start + 99
+19  libsystem_pthread.dylib             0x00007ff80db2abef thread_start + 15
+
+2025-02-15 15:44:59,195 - ERROR - Error closing WebDriver
+Traceback (most recent call last):
+  File "/Users/claudio/dev/imax-santiago/check-movies-json.py", line 113, in list_cinepolis_imax_movies
+    driver.quit()
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'driver' where it is not associated with a value
+2025-02-15 15:44:59,196 - INFO - Successfully saved movies.json
+2025-02-15 15:46:10,402 - INFO - Starting Chrome WebDriver...
+2025-02-15 15:46:13,901 - INFO - patching driver executable /Users/claudio/Library/Application Support/undetected_chromedriver/undetected_chromedriver
+2025-02-15 15:46:17,402 - INFO - Accessing URL: https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana
+2025-02-15 15:46:38,456 - INFO - Found 80 movie articles
+2025-02-15 15:46:38,699 - INFO - Processing IMAX movie: CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-15 15:46:38,703 - INFO - Found 2 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-15 15:46:38,715 - INFO - Found 1 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-15 15:46:38,970 - INFO - WebDriver closed successfully
+2025-02-15 15:46:38,971 - INFO - Successfully saved movies.json
