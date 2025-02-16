@@ -666,3 +666,12 @@ Traceback (most recent call last):
     driver.quit()
 UnboundLocalError: local variable 'driver' referenced before assignment
 2025-02-16 13:20:29,850 - INFO - Successfully saved movies.json
+2025-02-16 13:24:22,878 - INFO - Starting Chrome WebDriver...
+2025-02-16 13:24:23,581 - INFO - patching driver executable /home/claudio/.local/share/undetected_chromedriver/undetected_chromedriver
+2025-02-16 13:24:24,194 - INFO - Accessing URL: https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana
+2025-02-16 13:24:49,302 - INFO - Found 86 movie articles
+2025-02-16 13:24:50,485 - INFO - Processing IMAX movie: CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-16 13:24:50,499 - INFO - Found 2 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-16 13:24:50,535 - INFO - Found 2 showtimes for CAPITAN AMERICA: UN NUEVO MUNDO
+2025-02-16 13:24:50,872 - INFO - WebDriver closed successfully
+2025-02-16 13:24:50,873 - INFO - Successfully saved movies.json

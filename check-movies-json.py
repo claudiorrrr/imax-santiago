@@ -7,6 +7,9 @@ import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import SessionNotCreatedException
+import os
+import shutil
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,26 +20,46 @@ logging.basicConfig(
     ]
 )
 
+def clear_chrome_cache():
+    cache_path = os.path.expanduser('~/.local/share/undetected_chromedriver')
+    if os.path.exists(cache_path):
+        shutil.rmtree(cache_path)
+
+def create_driver(max_retries=3, retry_delay=1):
+    options = uc.ChromeOptions()
+    options.binary_location = "/usr/bin/google-chrome"
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--window-size=1920,1080')
+    options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+
+    for attempt in range(max_retries):
+        try:
+            clear_chrome_cache()  # Clear cache before each attempt
+            driver = uc.Chrome(
+                options=options,
+                version_main=132  # Your current Chrome version
+            )
+            driver.set_page_load_timeout(30)
+            return driver
+        except SessionNotCreatedException as e:
+            logging.warning(f"Driver creation attempt {attempt + 1} failed. Retrying...")
+            if attempt == max_retries - 1:
+                raise e
+            time.sleep(retry_delay)
+
 def list_cinepolis_imax_movies():
     logging.info("Starting Chrome WebDriver...")
     movies_data = {
         "last_updated": datetime.now().isoformat(),
         "movies": []
     }
+    driver = None
 
     try:
-        options = uc.ChromeOptions()
-        options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        options.add_argument('--disable-gpu')
-        options.add_argument('--window-size=1920,1080')
-        options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
-
-        driver = uc.Chrome(options=options)
-        options.binary_location = "/usr/bin/google-chrome"
-        driver.set_page_load_timeout(30)
-
+        driver = create_driver()
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
         logging.info(f"Accessing URL: {url}")
 
@@ -110,11 +133,12 @@ def list_cinepolis_imax_movies():
         logging.error(f"An error occurred: {str(e)}", exc_info=True)
         print(f"An error occurred: {e}")
     finally:
-        try:
-            driver.quit()
-            logging.info("WebDriver closed successfully")
-        except Exception as e:
-            logging.error("Error closing WebDriver", exc_info=True)
+        if driver:
+            try:
+                driver.quit()
+                logging.info("WebDriver closed successfully")
+            except Exception as e:
+                logging.error("Error closing WebDriver", exc_info=True)
 
     try:
         with open('movies.json', 'w', encoding='utf-8') as f:
