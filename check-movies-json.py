@@ -34,6 +34,7 @@ def list_cinepolis_imax_movies():
         options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
 
         driver = uc.Chrome(options=options)
+        options.binary_location = "/usr/bin/google-chrome"
         driver.set_page_load_timeout(30)
 
         url = "https://cinepolischile.cl/cartelera/santiago-oriente/cinepolis-mallplaza-egana"
