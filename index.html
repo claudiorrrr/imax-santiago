@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,47 +9,42 @@
 </head>
 <body>
     <div class="container">
-        <h1>IMAX Movies at Cinépolis Plaza Egaña</h1>
-        <div id="last-update"></div>
-        <div id="movies"></div>
+        <header>
+            <h1>IMAX Movies Santiago</h1>
+            <div id="last-update"></div>
+        </header>
+        <div id="movies-container"></div>
     </div>
     <script>
         fetch('movies.json')
             .then(response => response.json())
             .then(data => {
-                // Update last updated time
-                const lastUpdate = new Date(data.last_updated);
                 document.getElementById('last-update').textContent = 
-                    `Last updated: ${lastUpdate.toLocaleString()}`;
+                    `Last updated: ${new Date(data.last_updated).toLocaleString()}`;
 
-                // Display movies
-                const moviesDiv = document.getElementById('movies');
+                const moviesContainer = document.getElementById('movies-container');
                 data.movies.forEach(movie => {
                     const movieElement = document.createElement('div');
-                    movieElement.className = 'movie';
+                    movieElement.className = 'movie-card';
 
-                    let showtimesHtml = '';
-                    if (movie.showtimes.length > 0) {
-                        showtimesHtml = `
-                            <div class="showtimes">
-                                <h3>Showtimes:</h3>
-                                ${movie.showtimes.map(show => 
-                                    `<a href="${show.url}" target="_blank" class="showtime-btn">
-                                        ${show.time}
-                                    </a>`
-                                ).join('')}
-                            </div>
-                        `;
-                    }
+                    const showtimesHtml = movie.showtimes.map(show => 
+                        `<a href="${show.url}" class="showtime-btn" target="_blank">
+                            ${show.time}
+                         </a>`
+                    ).join('');
 
                     movieElement.innerHTML = `
-                        <h2>${movie.title}</h2>
-                        ${showtimesHtml}
+                        <h2 class="movie-title">${movie.title}</h2>
+                        <div class="showtimes">
+                            <h3>Showtimes:</h3>
+                            <div class="showtime-grid">
+                                ${showtimesHtml}
+                            </div>
+                        </div>
                     `;
-                    moviesDiv.appendChild(movieElement);
+                    moviesContainer.appendChild(movieElement);
                 });
             });
     </script>
 </body>
 </html>
-
