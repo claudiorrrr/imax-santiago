@@ -12,3 +12,8 @@ python3 check-movies-json.py
 ```
 
 Puedes ver qué películas en IMAX Plaza Egaña están hoy en exhibición acá https://claudiorrrr.github.io/imax-santiago/
+
+## To-Do:
+
+- [ ] Resolver scrapping de [Cinemark](https://www.cinemark.cl/cine?tag=511&cine=cinemark_mallplaza_vespucio)
+- [ ] Mejorar diseño?
