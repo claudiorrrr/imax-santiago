@@ -1,4 +1,30 @@
 {
-  "last_updated": "2025-02-19T06:00:02.689346",
-  "movies": []
+  "last_updated": "2025-02-19T09:00:02.558332",
+  "movies": [
+    {
+      "title": "CAPITAN AMERICA: UN NUEVO MUNDO",
+      "showtimes": [
+        {
+          "time": "11:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140666&countryCode=CL"
+        },
+        {
+          "time": "13:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140667&countryCode=CL"
+        },
+        {
+          "time": "21:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140670&countryCode=CL"
+        },
+        {
+          "time": "16:20",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140668&countryCode=CL"
+        },
+        {
+          "time": "19:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=140669&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
