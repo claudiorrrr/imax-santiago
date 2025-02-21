@@ -1,25 +1,21 @@
 {
-  "last_updated": "2025-02-20T18:00:02.143690",
+  "last_updated": "2025-02-20T21:00:02.485870",
   "movies": [
-    {
-      "title": "CAPITAN AMERICA: UN NUEVO MUNDO",
-      "showtimes": [
-        {
-          "time": "16:20",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141374&countryCode=CL"
-        },
-        {
-          "time": "22:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141369&countryCode=CL"
-        }
-      ]
-    },
     {
       "title": "UN COMPLETO DESCONOCIDO",
       "showtimes": [
         {
           "time": "19:00",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141352&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "CAPITAN AMERICA: UN NUEVO MUNDO",
+      "showtimes": [
+        {
+          "time": "22:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141369&countryCode=CL"
         }
       ]
     }
