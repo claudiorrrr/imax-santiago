@@ -1,15 +1,6 @@
 {
-  "last_updated": "2025-02-26T21:00:01.953718",
+  "last_updated": "2025-02-27T00:00:02.286174",
   "movies": [
-    {
-      "title": "UN COMPLETO DESCONOCIDO",
-      "showtimes": [
-        {
-          "time": "19:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141619&countryCode=CL"
-        }
-      ]
-    },
     {
       "title": "CAPITAN AMERICA: UN NUEVO MUNDO",
       "showtimes": [
