@@ -15,5 +15,5 @@ Puedes ver qué películas en IMAX Plaza Egaña están hoy en exhibición acá h
 
 ## To-Do:
 
-- [ ] Resolver scrapping de [Cinemark](https://www.cinemark.cl/cine?tag=511&cine=cinemark_mallplaza_vespucio)
+- [ ] Resolver scrapping de [Cinemark](https://www.cinemark.cl/cine?tag=511&cine=cinemark_mallplaza_vespucio) que es endemoniado.
 - [ ] Mejorar diseño?
