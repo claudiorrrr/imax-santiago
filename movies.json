@@ -1,4 +1,36 @@
 {
-  "last_updated": "2025-03-01T00:00:02.057135",
-  "movies": []
+  "last_updated": "2025-03-01T03:00:02.171315",
+  "movies": [
+    {
+      "title": "CAPITAN AMERICA: UN NUEVO MUNDO",
+      "showtimes": [
+        {
+          "time": "13:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141750&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "BECOMING LED ZEPPELIN",
+      "showtimes": [
+        {
+          "time": "16:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141281&countryCode=CL"
+        },
+        {
+          "time": "18:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141751&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "DUNA: PARTE DOS",
+      "showtimes": [
+        {
+          "time": "21:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141752&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
