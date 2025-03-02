@@ -1,13 +1,9 @@
 {
-  "last_updated": "2025-03-01T18:00:02.151462",
+  "last_updated": "2025-03-01T21:00:02.970545",
   "movies": [
     {
       "title": "BECOMING LED ZEPPELIN",
       "showtimes": [
-        {
-          "time": "16:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141281&countryCode=CL"
-        },
         {
           "time": "18:50",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141751&countryCode=CL"
