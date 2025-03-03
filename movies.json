@@ -1,23 +1,4 @@
 {
-  "last_updated": "2025-03-02T18:00:01.695341",
-  "movies": [
-    {
-      "title": "UN COMPLETO DESCONOCIDO",
-      "showtimes": [
-        {
-          "time": "18:45",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141782&countryCode=CL"
-        }
-      ]
-    },
-    {
-      "title": "BECOMING LED ZEPPELIN",
-      "showtimes": [
-        {
-          "time": "16:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=141282&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-03-02T21:00:01.410902",
+  "movies": []
 }
