@@ -1,4 +1,23 @@
 {
-  "last_updated": "2025-03-04T15:00:01.502778",
-  "movies": []
+  "last_updated": "2025-03-04T18:00:02.364541",
+  "movies": [
+    {
+      "title": "BECOMING LED ZEPPELIN",
+      "showtimes": [
+        {
+          "time": "18:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=63&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "DUNA: PARTE DOS",
+      "showtimes": [
+        {
+          "time": "21:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=64&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
