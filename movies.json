@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-03-05T18:00:02.278561",
-  "movies": [
-    {
-      "title": "DUNA: PARTE DOS",
-      "showtimes": [
-        {
-          "time": "21:40",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=106&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-03-05T21:00:01.712940",
+  "movies": []
 }
