@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-03-13T21:00:02.111134",
-  "movies": [
-    {
-      "title": "MICKEY 17",
-      "showtimes": [
-        {
-          "time": "21:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=684&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-03-14T00:00:02.144015",
+  "movies": []
 }
