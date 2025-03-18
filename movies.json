@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-03-18T15:00:01.576969",
+  "last_updated": "2025-03-18T18:00:02.108495",
   "movies": [
     {
       "title": "MICKEY 17",
@@ -11,15 +11,6 @@
         {
           "time": "21:50",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=947&countryCode=CL"
-        }
-      ]
-    },
-    {
-      "title": "BECOMING LED ZEPPELIN",
-      "showtimes": [
-        {
-          "time": "16:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=926&countryCode=CL"
         }
       ]
     }
