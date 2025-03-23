@@ -1,18 +1,4 @@
 {
-  "last_updated": "2025-03-22T21:00:01.894884",
-  "movies": [
-    {
-      "title": "BLANCA NIEVES",
-      "showtimes": [
-        {
-          "time": "19:20",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=611&countryCode=CL"
-        },
-        {
-          "time": "21:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=613&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-03-23T00:00:02.229343",
+  "movies": []
 }
