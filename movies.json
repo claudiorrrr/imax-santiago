@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-03-28T00:00:01.719956",
+  "last_updated": "2025-03-28T03:00:01.554083",
   "movies": [
     {
       "title": "BLANCA NIEVES",
@@ -7,14 +7,6 @@
         {
           "time": "12:40",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1731&countryCode=CL"
-        },
-        {
-          "time": "12:40",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1731&countryCode=CL"
-        },
-        {
-          "time": "18:40",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1733&countryCode=CL"
         },
         {
           "time": "18:40",
@@ -28,14 +20,6 @@
         {
           "time": "15:10",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1732&countryCode=CL"
-        },
-        {
-          "time": "15:10",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1732&countryCode=CL"
-        },
-        {
-          "time": "21:15",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1734&countryCode=CL"
         },
         {
           "time": "21:15",
