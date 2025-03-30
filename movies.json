@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-03-30T15:00:01.671633",
+  "last_updated": "2025-03-30T18:00:01.621987",
   "movies": [
     {
       "title": "BLANCA NIEVES",
@@ -13,10 +13,6 @@
     {
       "title": "INTERSTELLAR: 10 ANIVERSARIO",
       "showtimes": [
-        {
-          "time": "13:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1519&countryCode=CL"
-        },
         {
           "time": "19:30",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1540&countryCode=CL"
