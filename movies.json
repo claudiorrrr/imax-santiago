@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-03-31T21:00:02.156651",
-  "movies": [
-    {
-      "title": "INTERSTELLAR: 10 ANIVERSARIO",
-      "showtimes": [
-        {
-          "time": "21:15",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1636&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-04-01T00:00:01.875418",
+  "movies": []
 }
