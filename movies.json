@@ -1,4 +1,35 @@
 {
-  "last_updated": "2025-04-10T00:00:01.860808",
-  "movies": []
+  "last_updated": "2025-04-10T03:00:02.211453",
+  "movies": [
+    {
+      "title": "UNA PELICULA DE MINECRAFT",
+      "showtimes": [
+        {
+          "time": "12:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1979&countryCode=CL"
+        },
+        {
+          "time": "14:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1991&countryCode=CL"
+        },
+        {
+          "time": "17:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1986&countryCode=CL"
+        },
+        {
+          "time": "19:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=1992&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "EL AMATEUR: OPERACION VENGANZA",
+      "showtimes": [
+        {
+          "time": "21:45",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2032&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
