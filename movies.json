@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-04-10T21:00:01.738365",
-  "movies": [
-    {
-      "title": "EL AMATEUR: OPERACION VENGANZA",
-      "showtimes": [
-        {
-          "time": "21:45",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2032&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-04-11T00:00:02.160258",
+  "movies": []
 }
