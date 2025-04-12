@@ -1,13 +1,9 @@
 {
-  "last_updated": "2025-04-12T12:00:02.360887",
+  "last_updated": "2025-04-12T15:00:01.762562",
   "movies": [
     {
       "title": "UNA PELICULA DE MINECRAFT",
       "showtimes": [
-        {
-          "time": "12:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2192&countryCode=CL"
-        },
         {
           "time": "14:30",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2201&countryCode=CL"
