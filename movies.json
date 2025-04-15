@@ -1,19 +1,6 @@
 {
-  "last_updated": "2025-04-14T18:00:01.521443",
+  "last_updated": "2025-04-14T21:00:02.272633",
   "movies": [
-    {
-      "title": "UNA PELICULA DE MINECRAFT",
-      "showtimes": [
-        {
-          "time": "17:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2293&countryCode=CL"
-        },
-        {
-          "time": "19:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2303&countryCode=CL"
-        }
-      ]
-    },
     {
       "title": "EL AMATEUR: OPERACION VENGANZA",
       "showtimes": [
