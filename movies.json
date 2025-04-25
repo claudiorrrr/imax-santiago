@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-04-24T21:00:01.574812",
-  "movies": [
-    {
-      "title": "PINK FLOYD AT POMPEII - MCMLXXII",
-      "showtimes": [
-        {
-          "time": "21:15",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=650&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-04-25T00:00:01.998816",
+  "movies": []
 }
