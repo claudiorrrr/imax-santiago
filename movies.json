@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-04-25T21:00:01.780377",
-  "movies": [
-    {
-      "title": "PECADORES",
-      "showtimes": [
-        {
-          "time": "21:10",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3155&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-04-26T00:00:02.760137",
+  "movies": []
 }
