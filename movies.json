@@ -1,4 +1,31 @@
 {
-  "last_updated": "2025-04-26T00:00:02.760137",
-  "movies": []
+  "last_updated": "2025-04-26T03:00:02.245496",
+  "movies": [
+    {
+      "title": "PECADORES",
+      "showtimes": [
+        {
+          "time": "12:40",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3316&countryCode=CL"
+        },
+        {
+          "time": "15:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3081&countryCode=CL"
+        },
+        {
+          "time": "21:10",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3090&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "PINK FLOYD AT POMPEII - MCMLXXII",
+      "showtimes": [
+        {
+          "time": "19:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=2399&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
