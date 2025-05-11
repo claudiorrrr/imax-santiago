@@ -1,13 +1,9 @@
 {
-  "last_updated": "2025-05-10T18:00:02.337095",
+  "last_updated": "2025-05-10T21:00:01.914513",
   "movies": [
     {
       "title": "THUNDERBOLTS",
       "showtimes": [
-        {
-          "time": "16:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3746&countryCode=CL"
-        },
         {
           "time": "19:45",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3756&countryCode=CL"
