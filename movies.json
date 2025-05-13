@@ -1,4 +1,31 @@
 {
-  "last_updated": "2025-05-13T00:00:01.962189",
-  "movies": []
+  "last_updated": "2025-05-13T03:00:02.158860",
+  "movies": [
+    {
+      "title": "THUNDERBOLTS",
+      "showtimes": [
+        {
+          "time": "14:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3891&countryCode=CL"
+        },
+        {
+          "time": "16:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3899&countryCode=CL"
+        },
+        {
+          "time": "22:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3917&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "DESTINO FINAL: LAZOS DE SANGRE",
+      "showtimes": [
+        {
+          "time": "20:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3685&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
