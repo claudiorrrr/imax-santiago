@@ -1,4 +1,30 @@
 {
-  "last_updated": "2025-05-17T00:00:01.727196",
-  "movies": []
+  "last_updated": "2025-05-17T03:00:01.982528",
+  "movies": [
+    {
+      "title": "DESTINO FINAL: LAZOS DE SANGRE",
+      "showtimes": [
+        {
+          "time": "12:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3700&countryCode=CL"
+        },
+        {
+          "time": "14:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3699&countryCode=CL"
+        },
+        {
+          "time": "17:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3698&countryCode=CL"
+        },
+        {
+          "time": "19:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3697&countryCode=CL"
+        },
+        {
+          "time": "22:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=3696&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
