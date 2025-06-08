@@ -1,29 +1,9 @@
 {
-  "last_updated": "2025-06-07T18:00:02.692223",
+  "last_updated": "2025-06-07T21:00:02.005794",
   "movies": [
     {
       "title": "MISION IMPOSIBLE: LA SENTENCIA FINAL",
       "showtimes": [
-        {
-          "time": "18:15",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5192&countryCode=CL"
-        },
-        {
-          "time": "18:15",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5192&countryCode=CL"
-        },
-        {
-          "time": "18:15",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5192&countryCode=CL"
-        },
-        {
-          "time": "21:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5206&countryCode=CL"
-        },
-        {
-          "time": "21:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5206&countryCode=CL"
-        },
         {
           "time": "21:50",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5206&countryCode=CL"
