@@ -1,12 +1,29 @@
 {
-  "last_updated": "2025-06-18T21:00:02.267077",
+  "last_updated": "2025-06-19T00:00:01.838092",
   "movies": [
     {
       "title": "COMO ENTRENAR A TU DRAGON",
       "showtimes": [
         {
-          "time": "22:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5048&countryCode=CL"
+          "time": "13:15",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5610&countryCode=CL"
+        },
+        {
+          "time": "16:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5611&countryCode=CL"
+        },
+        {
+          "time": "19:00",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5612&countryCode=CL"
+        }
+      ]
+    },
+    {
+      "title": "MISION IMPOSIBLE: LA SENTENCIA FINAL",
+      "showtimes": [
+        {
+          "time": "21:45",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5613&countryCode=CL"
         }
       ]
     }
