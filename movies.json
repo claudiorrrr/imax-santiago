@@ -1,13 +1,9 @@
 {
-  "last_updated": "2025-06-20T09:00:02.654570",
+  "last_updated": "2025-06-20T12:00:01.761299",
   "movies": [
     {
       "title": "COMO ENTRENAR A TU DRAGON",
       "showtimes": [
-        {
-          "time": "10:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5648&countryCode=CL"
-        },
         {
           "time": "13:15",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5634&countryCode=CL"
