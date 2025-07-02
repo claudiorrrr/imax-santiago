@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-07-01T21:00:01.811139",
-  "movies": [
-    {
-      "title": "F1",
-      "showtimes": [
-        {
-          "time": "22:00",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=5358&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-07-02T00:00:02.398045",
+  "movies": []
 }
