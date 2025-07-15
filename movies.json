@@ -1,4 +1,26 @@
 {
-  "last_updated": "2025-07-15T00:00:01.848761",
-  "movies": []
+  "last_updated": "2025-07-15T03:00:01.396949",
+  "movies": [
+    {
+      "title": "SUPERMAN",
+      "showtimes": [
+        {
+          "time": "13:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6219&countryCode=CL"
+        },
+        {
+          "time": "16:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6220&countryCode=CL"
+        },
+        {
+          "time": "19:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6221&countryCode=CL"
+        },
+        {
+          "time": "22:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6215&countryCode=CL"
+        }
+      ]
+    }
+  ]
 }
