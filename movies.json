@@ -1,14 +1,4 @@
 {
-  "last_updated": "2025-07-22T15:00:02.369267",
-  "movies": [
-    {
-      "title": "SUPERMAN",
-      "showtimes": [
-        {
-          "time": "16:10",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7031&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-07-22T18:00:02.184273",
+  "movies": []
 }
