@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-07-24T09:00:02.214104",
+  "last_updated": "2025-07-24T12:00:01.522533",
   "movies": [
     {
       "title": "LOS 4 FANTASTICOS: PRIMEROS PASOS",
@@ -7,6 +7,22 @@
         {
           "time": "11:50",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6717&countryCode=CL"
+        },
+        {
+          "time": "11:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6717&countryCode=CL"
+        },
+        {
+          "time": "11:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6717&countryCode=CL"
+        },
+        {
+          "time": "14:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6718&countryCode=CL"
+        },
+        {
+          "time": "14:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6718&countryCode=CL"
         },
         {
           "time": "14:30",
@@ -17,8 +33,32 @@
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6706&countryCode=CL"
         },
         {
+          "time": "17:10",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6706&countryCode=CL"
+        },
+        {
+          "time": "17:10",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6706&countryCode=CL"
+        },
+        {
           "time": "19:50",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6707&countryCode=CL"
+        },
+        {
+          "time": "19:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6707&countryCode=CL"
+        },
+        {
+          "time": "19:50",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6707&countryCode=CL"
+        },
+        {
+          "time": "22:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6708&countryCode=CL"
+        },
+        {
+          "time": "22:30",
+          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=6708&countryCode=CL"
         },
         {
           "time": "22:30",
