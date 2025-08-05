@@ -1,17 +1,9 @@
 {
-  "last_updated": "2025-08-05T15:00:02.024020",
+  "last_updated": "2025-08-05T18:00:02.135454",
   "movies": [
     {
       "title": "LOS 4 FANTASTICOS: PRIMEROS PASOS",
       "showtimes": [
-        {
-          "time": "13:40",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7561&countryCode=CL"
-        },
-        {
-          "time": "16:20",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7565&countryCode=CL"
-        },
         {
           "time": "19:00",
           "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7568&countryCode=CL"
