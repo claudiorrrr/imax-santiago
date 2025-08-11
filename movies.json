@@ -1,31 +1,4 @@
 {
-  "last_updated": "2025-08-10T21:00:02.271126",
-  "movies": [
-    {
-      "title": "LOS 4 FANTASTICOS: PRIMEROS PASOS",
-      "showtimes": [
-        {
-          "time": "19:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7720&countryCode=CL"
-        },
-        {
-          "time": "19:50",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7720&countryCode=CL"
-        }
-      ]
-    },
-    {
-      "title": "LA HORA DE LA DESAPARICION",
-      "showtimes": [
-        {
-          "time": "22:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7881&countryCode=CL"
-        },
-        {
-          "time": "22:30",
-          "url": "https://compra.cinepolis.com/?cinemaVistaId=729&showtimeVistaId=7881&countryCode=CL"
-        }
-      ]
-    }
-  ]
+  "last_updated": "2025-08-11T00:00:02.269399",
+  "movies": []
 }
